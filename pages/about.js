@@ -11,7 +11,9 @@ export default class AboutPage extends React.Component{
 
 	// set navigation parameters
     static route = {
-        navigationBar: {
+       	navigationBar: {
+            backgroundColor: Config.COLOR_BRANDING,
+            tintColor: Config.COLOR_TINT_NAVIGATION_BAR,
             title: 'About',
         }
     }

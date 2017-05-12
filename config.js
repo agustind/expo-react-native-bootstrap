@@ -4,12 +4,10 @@ export default Config = {
 
     APP_NAME : 'Elixir',
     
-    MENU_ITEMS: [
-        {title:'News', value:'news'},
-        {title:'Notifications', value:'notifications'},
-        {title:'About', value:'about'}
-    ],
-
+    COLOR_BRANDING: '#00ADB5',
+    COLOR_DRAWER_BG: '#222831',
+    COLOR_DRAWER_LINK: '#FFFFFF',
+    COLOR_TINT_NAVIGATION_BAR: '#FFFFFF',
     FOOTER_TEXT : 'Built with love in Arg',
 
 }

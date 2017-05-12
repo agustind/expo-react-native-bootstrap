@@ -1,21 +1,18 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, Image } from 'react-native'
 import { createRouter, StackNavigation, DrawerNavigation, DrawerNavigationItem, } from '@expo/ex-navigation';
-
-
-
+import Config from '../config'
 
 // import pages to use in the router
-import IndexPage from './index'
+import NewsPage from './news'
 import AboutPage from './about'
 
 
 // set the routes
 const Router = createRouter(() => ({
-	home: () => IndexPage,
+	news: () => NewsPage,
 	about: () => AboutPage
 }));
-
 
 
 // Treat the DrawerNavigationLayout route like any other route -- you may want to set
@@ -30,20 +27,22 @@ export default class DrawerNavigationLayout extends React.Component {
 
 	render() {
 		return (
+
 			<DrawerNavigation
 			id='main'
-			initialItem='home'
+			initialItem='news'
 			drawerWidth={ 300 }
+			drawerStyle={ styles.drawerStyle }
 			renderHeader={ this._renderHeader }>
 
 				<DrawerNavigationItem
-				id='home'
+				id='news'
 				selectedStyle={ styles.selectedItemStyle }
-				renderTitle={ isSelected => this._renderTitle('Home', isSelected) }>
+				renderTitle={ isSelected => this._renderTitle('News', isSelected) }>
 
 					<StackNavigation
 					id='home'
-					initialRoute={ Router.getRoute('home') } />
+					initialRoute={ Router.getRoute('news') } />
 
 				</DrawerNavigationItem>
 
@@ -59,37 +58,48 @@ export default class DrawerNavigationLayout extends React.Component {
 				</DrawerNavigationItem>
 
 			</DrawerNavigation>
+
 			);
 	}
 
 	_renderHeader = () => {
 		return (
 			<View style={ styles.header }>
-				<Text>Pagescsdcsd</Text>
+				 <Image
+				 	style={{width: 300, height: 100}}
+          			source={require('../assets/icons/drawer-header.png')}
+        			/>
 			</View>
 			);
-	};
+	}
 
 	_renderTitle(text: string, isSelected: boolean) {
 		return (
 			<Text style={ [styles.titleText, isSelected ? styles.selectedTitleText : {}] }>
-			{ text }
+				{ text }
 			</Text>
 			);
 	}
-	;
+	
 }
 
 const styles = StyleSheet.create({
 	header: {
-		height: 20
+		marginTop: 50,
+		height: 100,
+		marginBottom: 20
+	},
+
+	drawerStyle: {
+		backgroundColor: Config.COLOR_DRAWER_BG
 	},
 
 	selectedItemStyle: {
-		backgroundColor: 'blue'
+		backgroundColor: Config.COLOR_BRANDING
 	},
 
 	titleText: {
+		color: Config.COLOR_DRAWER_LINK,
 		fontWeight: 'bold'
 	},
 
