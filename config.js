@@ -1,6 +1,6 @@
 export default Config = {
     
-    API_URL : 'http://fbc82e6e.ngrok.io/wallpapers',
+    API_URL : 'http://d743553b.ngrok.io/wallpapers',
 
     APP_NAME : 'Elixir',
     

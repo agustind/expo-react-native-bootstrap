@@ -7,6 +7,7 @@ import Config from '../config'
 import NewsPage from './news'
 import AboutPage from './about'
 
+
 // set the routes
 const Router = createRouter(() => ({
 	news: () => NewsPage,

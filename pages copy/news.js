@@ -5,8 +5,6 @@ import { SideMenu, List, ListItem, SearchBar} from 'react-native-elements'
 import { ScrollView, ListView, Screen, Icon, Tile, Card, Subtitle, Caption, Image, GridRow, Divider, Row, Heading, Title, NavigationBar } from '@shoutem/ui'
 import Config from '../config'
 
-
-
 export default class IndexPage extends React.Component{
 
 	constructor(props) {
