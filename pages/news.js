@@ -7,7 +7,7 @@ import Config from '../config'
 
 
 
-export default class IndexPage extends React.Component{
+export default class NewsPage extends React.Component{
 
 	constructor(props) {
         super(props);
@@ -25,12 +25,6 @@ export default class IndexPage extends React.Component{
             tintColor: Config.COLOR_TINT_NAVIGATION_BAR,
             title: 'News',
         }
-    }
-
-
-    // opens another page
-    _handlePress = () => {
-        this.props.navigator.push('about');
     }
 
 
